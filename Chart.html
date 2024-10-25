@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .body {
+        background-color: rgb(193, 243, 247);
+        margin: 1px;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .h2 {
+        color: brown;
+        margin-bottom: 3rem;
+
+    }
+</style>
+
+
+
+<body class="body">
+    <table>
+        <th>
+        <div>
+            <h2 class="h1">My Daily Activity </h1>
+        </div>
+         </th>
+
+        <tr>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </tr>
+    </table>
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Study', 'Work out', 'Eat', 'Rest', 'Games', 'Sleep'],
+            datasets: [{
+                label: '# of Votes',
+                data: [11, 19, 8, 5, 10, 3],
+                backgroundColor: [
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    '#4BC0C0',
+                    '#9966FF',
+                    '#FF9F40'
+                ],
+                borderColor: [
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    '#4BC0C0',
+                    '#9966FF',
+                    '#FF9F40'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+
+
+
+</html>
